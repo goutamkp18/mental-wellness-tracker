@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { ArrowLeft, Circle, Flower2, Sparkles } from "lucide-react";
+import { ArrowLeft, Circle, Flower2, Sparkles, Palette } from "lucide-react";
 
 const Games = () => {
   const navigate = useNavigate();
@@ -30,6 +30,14 @@ const Games = () => {
       icon: Sparkles,
       color: "from-purple-400 to-pink-400",
       route: "/games/particle-meditation",
+    },
+    {
+      id: "color-therapy",
+      name: "Color Therapy",
+      description: "Color beautiful patterns to relax your mind and express creativity",
+      icon: Palette,
+      color: "from-pink-400 to-rose-400",
+      route: "/games/color-therapy",
     },
   ];
 
@@ -65,7 +73,7 @@ const Games = () => {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {games.map((game, index) => {
               const Icon = game.icon;
               return (

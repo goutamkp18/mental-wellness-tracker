@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { supabase } from "@/integrations/supabase/client";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Brain, Gamepad2, LineChart, LogOut, Sparkles, Target } from "lucide-react";
+import { Brain, Gamepad2, LineChart, LogOut, Sparkles, Target, Heart, Users } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { LineChart as RechartsLineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from "recharts";
 
@@ -150,6 +150,48 @@ const Dashboard = () => {
               <CardContent>
                 <div className="flex items-center text-sm text-accent font-medium">
                   Play Games
+                  <Target className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-smooth" />
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card 
+              className="group hover:shadow-glow transition-smooth cursor-pointer border-wellness-balance/30 hover:border-wellness-balance/50"
+              onClick={() => navigate("/therapy")}
+            >
+              <CardHeader>
+                <div className="w-14 h-14 bg-gradient-to-br from-wellness-balance to-wellness-calm rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-smooth shadow-soft">
+                  <Heart className="w-7 h-7 text-white" />
+                </div>
+                <CardTitle className="text-2xl font-display">Therapy Tools</CardTitle>
+                <CardDescription className="text-base">
+                  Access guided therapy tools including journaling, breathing exercises, music and yoga therapy.
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div className="flex items-center text-sm text-wellness-balance font-medium">
+                  Explore Tools
+                  <Target className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-smooth" />
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card 
+              className="group hover:shadow-glow transition-smooth cursor-pointer border-wellness-energy/30 hover:border-wellness-energy/50"
+              onClick={() => navigate("/support-groups")}
+            >
+              <CardHeader>
+                <div className="w-14 h-14 bg-gradient-to-br from-wellness-energy to-primary rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-smooth shadow-soft">
+                  <Users className="w-7 h-7 text-white" />
+                </div>
+                <CardTitle className="text-2xl font-display">Support Groups</CardTitle>
+                <CardDescription className="text-base">
+                  Join anonymous, moderated support groups to connect with others on similar wellness journeys.
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div className="flex items-center text-sm text-wellness-energy font-medium">
+                  Join Groups
                   <Target className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-smooth" />
                 </div>
               </CardContent>
